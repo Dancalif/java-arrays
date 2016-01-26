@@ -1,9 +1,5 @@
-#Basic Project
+#Java Arrays Project
 
-Basic Java Maven Project Structure
-
-*QA
-*Java
-*Maven
+Learning Java Arrays
 
 [Denis Umanets](http://sqasolution.com)

@@ -13,6 +13,7 @@ public class ArrayCreation {
 		// Method to create char array #3
 		char[] myCharArray3;
 
+		// Create an array of Int
 		int[] myIntArray = new int[5];
 		myIntArray[0] = 1;
 		myIntArray[1] = 3;
@@ -20,22 +21,29 @@ public class ArrayCreation {
 		myIntArray[3] = 7;
 		myIntArray[4] = 9;
 
+		// Create an array of String
 		String[] myStringArray = { "Hello ", "my ", "fabulous ", "World ", "!!! " };
 
+		// Call the method to print the elements of array of String and it's
+		// size
 		whatSizeIsMyStringArray(myStringArray);
+		// Call the method to print the elements of array of Int and it's size
 		whatSizeIsMyIntArray(myIntArray);
 
 	}
 
+	// Method to print the elements of array of Int and it's size
 	public static void whatSizeIsMyIntArray(int[] a) {
-
+		// FOR loop to go though the element of array of Int
 		for (int i = 0; i < a.length; i++) {
 			System.out.println("Index " + i + " of myIntArray is " + a[i]);
 		}
 		System.out.print("\nThe size of Int array is " + a.length + " elements.\n\n");
 	}
 
+	// Method to print the elements of array of String and it's size
 	public static void whatSizeIsMyStringArray(String[] b) {
+		// FOR loop to go though the element of array of String
 		for (int i = 0; i < b.length; i++) {
 			System.out.println("Index " + i + " of myStringArray is " + b[i]);
 		}

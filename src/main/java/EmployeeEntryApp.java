@@ -7,19 +7,19 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class EmployeeEntryApp {
 	public static void main(String[] args) throws Exception {
-		readFile(new File("new.xlsx"));
+
+		writeFile();
+		readFile(new File("/Users/dancalif/desktop/new2.xlsx"));
 	}
 
 	public static void readFile(File file) throws InvalidFormatException, IOException {
 		XSSFWorkbook xw = new XSSFWorkbook(file);
 		SXSSFWorkbook wb = new SXSSFWorkbook(xw);
-		System.out.println(wb.getNumberOfSheets());
 		wb.close();
 
 	}
@@ -33,13 +33,13 @@ public class EmployeeEntryApp {
 			Row row = sh.createRow(rownum);
 			for (int cellnum = 0; cellnum < 10; cellnum++) {
 				Cell cell = row.createCell(cellnum);
-				String address = new CellReference(cell).formatAsString();
+				String address = "Hello";
 				cell.setCellValue(address);
 			}
 
 		}
 
-		File dest = new File("new.xlsx");
+		File dest = new File("/Users/dancalif/desktop/new2.xlsx");
 
 		if (!dest.exists()) {
 			dest.createNewFile();

@@ -109,11 +109,38 @@ public class TestEmployeeEntryApp {
 				writeFile(emplDataArray, totalEmployee, 0);
 			}
 		}
+		keyboard.close();
 		System.out.print("\n");
 		System.out.printf("%s", "--------------------------------------------------------------------------\n");
 		System.out.printf("%40s%S%s", "<<<<<Please check the file ", "\"Employees\" ", " on a desktop .>>>>>\n");
 		System.out.printf("%40s%S%s", "<<<<<Thank you for using ", "\"EmployeeEntry\"", " application.>>>>>\n");
 		System.out.printf("%s", "--------------------------------------------------------------------------\n");
+
+	}
+
+	// Method to validate if user has the permission to enter the app
+	public static void UserLogin(String userNameInput, String userPassInput) {
+		// Vars to store the username and password
+		String userNameSaved = "Dancalif";
+		String userPassSaved = "12345";
+		// Flag to exit a loop in login is successful
+		boolean successLogin = false;
+		// Loop in case if any entered values are wrong
+		do {
+			Scanner keyboard = new Scanner(System.in);
+			if (userNameInput.equals(userNameSaved) && userPassInput.equals(userPassSaved)) {
+				System.out.println("You have successfully logged in.");
+				System.out.printf("%s",
+						"         --------------------------------------------------------------------------\n");
+				successLogin = true;
+			} else {
+				System.out.print("Username or password is incorrect. Please try again.\n");
+				System.out.print("Username: ");
+				userNameInput = keyboard.nextLine();
+				System.out.print("Password: ");
+				userPassInput = keyboard.nextLine();
+			}
+		} while (successLogin == false);
 	}
 
 	public static void writeFile(String[] emplDataArray, int totalEmployee, int rownum)
@@ -140,30 +167,5 @@ public class TestEmployeeEntryApp {
 
 		// dispose of temporary files backing this workbook on disk
 		wb.dispose();
-	}
-
-	// Method to validate if user has the permission to enter the app
-	public static void UserLogin(String userNameInput, String userPassInput) {
-		// Vars to store the username and password
-		String userNameSaved = "Dancalif";
-		String userPassSaved = "12345";
-		// Flag to exit a loop in login is successful
-		boolean successLogin = false;
-		// Loop in case if any entered values are wrong
-		do {
-			Scanner keyboard = new Scanner(System.in);
-			if (userNameInput.equals(userNameSaved) && userPassInput.equals(userPassSaved)) {
-				System.out.println("You have successfully logged in.");
-				System.out.printf("%s",
-						"         --------------------------------------------------------------------------\n");
-				successLogin = true;
-			} else {
-				System.out.print("Username or password is incorrect. Please try again.\n");
-				System.out.print("Username: ");
-				userNameInput = keyboard.nextLine();
-				System.out.print("Password: ");
-				userPassInput = keyboard.nextLine();
-			}
-		} while (successLogin == false);
 	}
 }
